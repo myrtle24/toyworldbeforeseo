@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page</title>
+</head>
+<body>
+
+<div>Welcome</div>
+
+<div>
+    <div>
+        <div>Item 1</div>
+        <div>500</div>
+        <button onclick="a('a',500)">Click</button>
+    </div>
+
+    <div>
+        <div>Item 2</div>
+        <div>800</div>
+        <button onclick="a('b',800)">Click</button>
+    </div>
+
+    <div>
+        <div>Item 3</div>
+        <div>400</div>
+        <button onclick="a('c',400)">Click</button>
+    </div>
+</div>
+
+<div>
+    <div>Cart</div>
+    <ul id="x"></ul>
+    <div>Total <span id="t">0</span></div>
+    <button onclick="p()">Pay</button>
+</div>
+
+<script>
+var z = 0;
+
+function a(n,p){
+    var li = document.createElement("li");
+    li.innerHTML = n + " " + p;
+    document.getElementById("x").appendChild(li);
+    z = z + p;
+    document.getElementById("t").innerHTML = z;
+}
+
+function p(){
+    alert("Done");
+    document.getElementById("x").innerHTML="";
+    z = 0;
+    document.getElementById("t").innerHTML = 0;
+}
+</script>
+
+</body>
+</html>
